@@ -14,19 +14,30 @@
         android:isGame="true"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat">
+<<<<<<< HEAD
         <activity android:name=".messangergame.GameSelector">
+=======
+        <activity android:name=".messangergame.ListActivity"></activity>
+        <activity android:name=".messangergame.SettingsActivity">
+        </activity>
+        <activity android:name=".messangergame.MainActivity" />
+        <activity android:name=".AndroidLauncher">
+>>>>>>> 24666ab0b7406b1bd80650ddfd59ef66f0a72d48
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".messangergame.ListActivity" />
         <activity android:name=".messangergame.SettingsActivity"></activity>
         <activity android:name=".messangergame.MainActivity" />
         <activity android:name=".AndroidLauncher"
             android:screenOrientation="landscape">
         </activity>
+=======
+>>>>>>> 24666ab0b7406b1bd80650ddfd59ef66f0a72d48
     </application>
 
 </manifest>
