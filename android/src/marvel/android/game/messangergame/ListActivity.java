@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import marvel.android.game.R;
+
 public class ListActivity extends AppCompatActivity {
 
 

@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import marvel.android.game.R;
+
 public class ServerAdapter extends ArrayAdapter<Server> {
     private ListView lv;
     private ListActivity la;
