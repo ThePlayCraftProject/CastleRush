@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="marvel.android.game.messangergame">
+    package="marvel.android.game">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:appCategory="game"
+        android:background="@color/colorPrimary"
         android:icon="@drawable/ic_launcher"
         android:isGame="true"
         android:label="@string/app_name"
-        android:background="@color/colorPrimary"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".ListActivity"></activity>
-        <activity android:name=".SettingsActivity">
+        <activity android:name=".messangergame.GameSelector">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".messangergame.ListActivity" />
+        <activity android:name=".messangergame.SettingsActivity"></activity>
+        <activity android:name=".messangergame.MainActivity" />
+        <activity android:name=".AndroidLauncher"
+            android:screenOrientation="landscape">
+        </activity>
     </application>
 
 </manifest>

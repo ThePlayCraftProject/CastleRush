@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import marvel.android.game.R;
 import marvel.android.game.messangergame.clientside.Client;
 import marvel.android.game.messangergame.clientside.ClientThread;
 

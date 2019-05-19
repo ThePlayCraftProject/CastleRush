@@ -3,6 +3,7 @@ package marvel.android.game.messangergame;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import marvel.android.game.R;
 import marvel.android.game.messangergame.clientside.Client;
 
 public class AppClient {

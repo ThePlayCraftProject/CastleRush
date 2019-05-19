@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import marvel.android.game.R;
+
 public class SettingsActivity extends AppCompatActivity {
     private EditText NAME;
     private String name;
