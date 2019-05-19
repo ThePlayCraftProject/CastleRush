@@ -1,19 +1,18 @@
-package marvel.android.game;
+package marvel.android.game.states;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector3;
 
-import java.awt.Rectangle;
+import marvel.android.game.CastleRush;
 
-import marvel.android.game.sprites.Castle;
-import marvel.android.game.states.GameStateManager;
-import marvel.android.game.states.State;
-
-class StartState extends State {
+public class StartState extends State {
     private Texture bg;
     private Texture pb;
     private Rectangle pbBounds;
+    private Vector3 touchPos;
 
     public StartState(GameStateManager gsm) {
         super(gsm);
@@ -29,8 +28,11 @@ class StartState extends State {
     @Override
     protected void handlInput() {
         if (Gdx.input.justTouched()) {
-            Rectangle point = new Rectangle(Gdx.input.getX(), Gdx.input.getY(), 1, 1);
-            if (pbBounds.intersects(point)) {
+            touchPos = new Vector3();
+            touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
+            camera.unproject(touchPos);
+            Rectangle point = new Rectangle(touchPos.x, touchPos.y, 1, 1);
+            if (point.overlaps(pbBounds)) {
                 gsm.set(new GameState(gsm));
             }
         }
@@ -46,7 +48,7 @@ class StartState extends State {
         sb.setProjectionMatrix(camera.combined);
         sb.begin();
         sb.draw(bg, 0, 0, camera.viewportWidth, camera.viewportHeight);
-        sb.draw(pb, pbBounds.x, pbBounds.y);
+        sb.draw(pb, pbBounds.x, pbBounds.y, pbBounds.width, pbBounds.height);
         sb.end();
     }
 
